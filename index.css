@@ -1,0 +1,344 @@
+ nav {
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      align-items: center;
+      background-color: rgb(13, 0, 96);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      padding: 0 2rem;
+      z-index: 10;
+      width: 96%;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      height: 48px;
+    }
+    .navbar-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    .navbar-logo span {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-left: 10px;
+      letter-spacing: 2px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .navbar-nav {
+      display: flex;
+      justify-content: right;
+      align-items: flex-end;
+      padding: 10px 0;
+      margin: 0;
+      list-style: none;
+      gap: 5rem;
+      background: none; /* Remove background here, it's on nav now */
+      box-shadow: none;
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #b6b6b6;
+      text-decoration: none;
+      border-radius: 1rem;
+      padding: 0.4rem 1rem;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+      position: relative;
+      outline: none;
+    }
+    .nav-link i {
+      font-size: 1.2rem;
+      margin-bottom: 0.1rem;
+      transition: color 0.3s, transform 0.3s, font-size 0.3s;
+    }
+    .nav-link .link-text {
+      font-size: 0.95rem;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      margin-top: 0.1rem;
+      white-space: nowrap;
+    }
+    .nav-link:hover,
+    .nav-link:focus {
+      background: #505070;
+      color: lavender;
+      transform: translateY(-2px) scale(1.08);
+    }
+    .nav-link:hover i,
+    .nav-link:focus i {
+      color: #47e4f6;
+      transform: scale(1.18) rotate(-8deg);
+      font-size: 1.5rem;
+    }
+    .nav-link:hover .link-text,
+    .nav-link:focus .link-text {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .bottom-nav{
+      display: none;
+    }
+    @keyframes scalePulse {
+  0%   { transform: scale(0.89);}
+  50%  { transform: scale(1.15);}
+  100% { transform: scale(0.89);}
+}
+
+.active {
+  animation: scalePulse 5s ease-in-out 0s infinite;
+}
+
+.home {
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.home div{
+  width: 50%;
+  margin: 50px;
+}
+.home p{
+  position: relative;
+  z-index: 2;
+  color: rgb(206, 221, 235);
+}
+.home button{
+  position: relative;
+  z-index: 2;
+  background: lightslategrey;
+  color: aliceblue;
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQek96yq7yst2InjpEEe2lv1-6Hw6fzMqXMIQ&s') center/cover no-repeat;
+  filter: blur(9px);
+  z-index: 1;
+}
+
+.home h1{
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 5rem;
+}
+
+.about{
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  padding: 50px;
+}
+.service{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  width: 30%;
+  height: fit-content;
+  border: 1px solid rgb(99, 186, 215);
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+}
+.card p{
+  padding: 10px;
+}
+
+.contact-container {
+      background: #fff;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #1877f2;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #1877f2;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #145db2;
+    }
+
+
+    @media screen and (max-width: 600px) {
+  .contact-container {
+    max-width: 100%;
+    margin: 10px;
+    padding: 15px 5px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  input, textarea {
+    font-size: 1rem;
+    padding: 6px;
+  }
+  button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .service{
+  flex-direction: column;
+}
+.card{
+  width: 90%;
+}
+
+ .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      background-color: rgb(13, 0, 96);
+      width: 100%;
+      max-width: 500px;
+      height: 70px;
+      border-radius: 15px 15px 0 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 3;
+    }
+    .nav-item {
+      color: white;
+      font-size: 20px;
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    @keyframes moveUpDown {
+  0%   { transform: translateY(-20px); }
+  50%  { transform: translateY(-30px); }
+  100% { transform: translateY(-20px); }
+}
+
+.nav-item.active {
+  background: lavender;
+  color: rgb(13, 0, 96);
+  border-radius: 50%;
+  border: none;
+  padding: 20px;
+  /* animation-delay: 5s; */
+  transform: translateY(-20px);
+  animation: moveUpDown 4s ease-in-out 1s infinite;
+}
+
+
+
+
+    .nav-item.active i{
+      border: 3px solid rgb(13, 0, 96);
+      border-radius: 50%;
+      padding: 2px;
+    }
+    
+    i:hover{
+      transform: scale(1.05);
+    }
+    .nav-item.active i:hover{
+      transform: none;
+    }
+    .nav-item.active a{
+      color: rgb(13, 0, 96) ;
+    }
+
+
+    nav{
+      display: none;
+    }
+
+    .home {
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.home div{
+  width: 100%;
+  margin: 0px;
+}
+.home p{
+  position: relative;
+  z-index: 2;
+  color: rgb(206, 221, 235);
+  font-size: 1rem;
+}
+.home button{
+  position: relative;
+  z-index: 2;
+  background: lightslategrey;
+  color: aliceblue;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+
+
+.home h1{
+  
+  color: white;
+  font-size: 3rem;
+}
+input,textarea{
+  width: 90%;
+}
+
+a{
+  color: #fff;
+}
+
+}
